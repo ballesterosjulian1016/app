@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Garaje · coches de segunda mano</title>
+<meta name="theme-color" content="#16233B">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <h1>Garaje</h1>
+  <button id="btn-add" class="btn">Publicar coche</button>
+</header>
+
+<main>
+  <section class="filters">
+    <input id="q" type="search" placeholder="Busca marca o modelo" aria-label="Buscar">
+    <select id="brand" aria-label="Marca"><option value="">Todas las marcas</option></select>
+    <select id="sort" aria-label="Ordenar">
+      <option value="new">Más recientes</option>
+      <option value="asc">Precio: de menor a mayor</option>
+      <option value="desc">Precio: de mayor a menor</option>
+    </select>
+  </section>
+  <p id="count" aria-live="polite"></p>
+  <section id="list" class="grid"></section>
+</main>
+
+<dialog id="detail"></dialog>
+
+<dialog id="form-dlg">
+  <form id="form" method="dialog">
+    <h2>Publicar coche</h2>
+    <label>Marca <input name="brand" required maxlength="30"></label>
+    <label>Modelo <input name="model" required maxlength="40"></label>
+    <div class="row">
+      <label>Año <input name="year" type="number" min="1950" max="2027" required></label>
+      <label>Kilómetros <input name="km" type="number" min="0" required></label>
+    </div>
+    <div class="row">
+      <label>Precio (€) <input name="price" type="number" min="0" required></label>
+      <label>Combustible
+        <select name="fuel">
+          <option>Gasolina</option><option>Diésel</option>
+          <option>Híbrido</option><option>Eléctrico</option>
+        </select>
+      </label>
+    </div>
+    <label>Color <input name="color" type="color" value="#2b4c7e"></label>
+    <label>Descripción <textarea name="desc" rows="3" maxlength="300"></textarea></label>
+    <div class="actions">
+      <button type="button" class="btn ghost" id="cancel">Cancelar</button>
+      <button class="btn">Publicar</button>
+    </div>
+  </form>
+</dialog>
+
+<script src="app.js"></script>
+</body>
+</html>

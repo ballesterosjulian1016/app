@@ -1,0 +1,10 @@
+{
+  "name": "Garaje · coches de segunda mano",
+  "short_name": "Garaje",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#EEF0F3",
+  "theme_color": "#16233B",
+  "icons": [{"src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"}]
+}
